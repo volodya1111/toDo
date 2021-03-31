@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap');
+
+:root{
+    --bg-gradient: linear-gradient(to right top, #2a54c8, #9845ba, #d2339c, #f43876, #ff594e, #ff713a, #ff8a23, #f8a300, #f6b000, #f4be00, #f0cb04, #ebd816);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+
+*{
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    background-image: url(resize.png);
+    background-size: cover;
+    padding: 20px ;
+    width: 20%;
+    color: white;
+    border-radius: 15px;
+}
+
+.toDoList{
+    min-height: 300px;
+}
+
+.toDoList li{
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px 0;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.toDoDetail{
+    display: flex;
+}
+
+.toDoText{
+    margin: 0 10px;
+}
+
+.toDoDetail input{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    border:1px solid black;
+}
+
+
+.addToDo {
+    display: flex;
+}
+
+
+.addToDo input{
+    width: 80%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+.addToDo button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+}
+
+
+.complete{
+    opacity: 0.8;
+    text-decoration: line-through;
+    background-image: linear-gradient(to right, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
+    color: black;
+}
+
+.item::before{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.item{
+    position: relative;
+    background-image: var(--bg-gradient); 
+    animation: background 3.5s infinite alternate;
+    background-size: 400% 400%;  
+    color: white;
+}
+
+@keyframes background {
+    0% {
+    background-position: 0% 50%
+    }
+    50% {
+    background-position: 100% 50%
+    }
+    100% {
+    background-position: 0% 50%
+    }
+    }
+   
+.addToDo button:active{
+    transform: scale(0.9);
+}
+
+
+.toDoText{
+    pointer-events: none;
+}
